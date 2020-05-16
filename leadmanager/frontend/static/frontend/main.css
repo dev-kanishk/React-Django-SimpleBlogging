@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Century Gothic";
+}
+
+.showNav {
+  left: 0;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #aaf;
+
+  a {
+    color: #fff;
+  }
+
+  ul {
+    @media (max-width: 768px) {
+      transition: 1s;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      left: -100%;
+      top: 0;
+      background-color: #aaf;
+      width: 50%;
+      height: 100vh;
+      box-shadow: 0 0 10rem rgba(0, 0, 0, 0.5);
+      li {
+        a {
+          display: block;
+          padding: 1rem;
+        }
+      }
+    }
+    display: flex;
+    list-style: none;
+
+    li {
+      margin: 0 1rem;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+
+  button {
+    @media (min-width: 768px) {
+      display: none;
+    }
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+
+    span {
+      color: #fff;
+    }
+  }
+}
