@@ -7,7 +7,7 @@ import { ALL_LEADS } from './types';
 // GET LEADS
 export const allleads = () => (dispatch, getState) => {
   axios
-    .get('/api/leads2/')
+    .get('/api/Blogs2/')
     .then((res) => {
       dispatch({
         type: ALL_LEADS,

@@ -1,24 +1,24 @@
 from .models import Blog
 from rest_framework import viewsets, permissions
-from .serializer import LeadSerializer
+from .serializer import BlogSerializer
 
 
-class LeadViewSet2(viewsets.ModelViewSet):
+class BlogViewSet2(viewsets.ModelViewSet):
     
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = LeadSerializer
+    serializer_class = BlogSerializer
     def get_queryset(self):
         print("yup lead2")
         return Blog.objects.all().order_by('created_at').reverse()
 
 
-class LeadViewSet(viewsets.ModelViewSet):
+class BlogViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.IsAuthenticated,
     ]
-    serializer_class = LeadSerializer
+    serializer_class = BlogSerializer
 
     def get_queryset(self):
         print("REQUET")
